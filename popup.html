@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+
+      body {
+        min-width: 0px;  
+        overflow-x: hidden;
+        font-family: Tahoma, sans-serif;
+        font-size: 12px;
+      }
+
+      #container {
+        background-color: white;
+        margin: 0 auto; 
+        width: 300px;
+        border: 2px solid black;
+      }
+
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+     <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+
+        <div id="container">
+      <h1>Add a new item to Aveece | Official Tastemaker Chrome Extension</h1>
+
+      <h3>This form autopopulates with data from the page</h3>
+      <h3>Make sure to check it, correct it if needed and fill the blanks</h3>
+          
+          <!-- Form inputs -->
+      <form name="input">
+        Title:   <input type="text" name="title" id="title"> <br />
+        URL:     <input type="text" name="url" id="url"><br />
+        Price:   <input type="text" name="price" id="price"><br />
+        <label>Gender</label><br />
+        <select id="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select><br />
+        <label>Vibe</label><br />
+        <select id="vibe">
+          <option value="Elegant">Elegant</option>
+          <option value="Casual">Casual</option>
+          <option value="Preppy">Preppy</option>
+          <option value="Flashy">Flashy</option>
+        </select><br />
+        <label>Apparel</label><br />
+        <select id="apparel">
+          <option value="Tops">Tops</option>
+          <option value="Bottoms">Bottoms</option>
+        </select><br /><br />
+
+          <!-- Submit form -->
+      <input type="submit" value="Submit" id="form_submit">
+
+      </form>
+    </div>
+  </body>
+</html>
+
