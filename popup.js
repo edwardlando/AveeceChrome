@@ -25,6 +25,17 @@ chrome.tabs.getSelected(null, function(tab) {
 
   */
 
+
+function getCookies(domain, name, callback) {
+    chrome.cookies.get({"url": domain, "name": name}, function(cookie) {
+        if(callback) {
+            callback(cookie.value);
+        }
+    });
+}
+
+
+
   function post_to_url(path, params, method) {
     method = method || "post"; // Set method to post by default, if not specified.
 
@@ -73,7 +84,8 @@ chrome.tabs.getSelected(null, function(tab) {
   $('#form_submit').click(function() {
 
 
-
+//usage:
+getCookies("https://www.aveece.com", "aveece_user_id", function(uid) {
 
 
   /* Form inputs */
@@ -87,7 +99,9 @@ chrome.tabs.getSelected(null, function(tab) {
 
     if (validate()){
 
-
+  if (uid != null) {
+  alert(uid);
+  console.log(uid);
 
 //    var base_url = "localhost:3000/items/new?"
   var base_url = "https://aveece.com/items/new?";
@@ -97,49 +111,19 @@ chrome.tabs.getSelected(null, function(tab) {
   base_url += ("&gender=" + gender.val());
   base_url += ("&vibe=" + vibe.val());
   base_url += ("&apparel=" + apparel.val());
-  base_url += ("&user_id=" + "99");
-
-
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", base_url, true);
-xhr.onreadystatechange = function() {
-  if (xhr.readyState == 4) {
-    // JSON.parse does not evaluate the attacker's scripts.
-  //  var resp = JSON.parse(xhr.responseText);
-  }
+  base_url += ("&user_id=" + uid);
+ window.open(base_url);
 }
-xhr.send();
+else {
+  console.log("UID WAS NULL");
+  console.log(uid);
+  alert("FAILURE- must log in");
+}
+}
 
-
-//  window.open(base_url);
-/*
-$.ajax({
-     url:base_url,
-     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
-     success:function(json){
-         // do stuff with json (in this case an array)
-         console.log("success");
-         alert("Success");
-     },
-     error:function(){
-         alert("Error");
-         console.log("failure");
-     },
 });
-*/
 
-alert("hello");
 
-/*
-$.get(base_url, function(data){
-  console.log(data);
-  alert(data);
-  console.log("After wards");
-});
-*/
-
-    }
   });
 
 

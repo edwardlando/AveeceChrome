@@ -6,7 +6,7 @@
   "version": "1.0",
 
   "permissions": [
-    "http://*/*","https://*/*", "tabs", "https://aveece.com/items/new?/*"
+    "http://*/*","https://*/*", "tabs", "https://aveece.com/items/new?/*","cookies"
   ],
   "homepage_url" : "https://aveece.com/items/",
   "content_scripts": [
