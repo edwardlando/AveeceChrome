@@ -8,10 +8,6 @@
     });
   }
 
-function getAveeceCookie(domain,name,callback){
-    getCookies(domain,name,callback);
-    setTimeout(5000);
-}
 
 
 
@@ -27,21 +23,15 @@ $(document).ready(function() {
 
 
 
-  /* Form inputs */
-  var title = $("#title");
-  var url = $("#url");
-  var price = $("#price");
-  var gender = $("#gender");
-  var vibe = $("#vibe");
-  var apparel = $("#apparel");
-
-
 
  $('#form_submit').click(function() {
 //
 //usage:
 
 
+getCookies("https://www.aveece.com", "aveece_user_id", function(uid) {
+
+
 
   /* Form inputs */
   var title = $("#title");
@@ -50,7 +40,16 @@ $(document).ready(function() {
   var gender = $("#gender");
   var vibe = $("#vibe");
   var apparel = $("#apparel");
+  console.log(uid);
+  alert(uid);
+  });
 
+});
+
+
+});
+
+/*
     function validate() {
    if( title.val() == "" )
    {
@@ -73,10 +72,6 @@ $(document).ready(function() {
 
   if (validate()){
 
-    getAveeceCookie("https://www.aveece.com","aveece_user_id",function(data){
-      
-    });
-
     if (uid != null) {
       alert(uid);
       console.log(uid);
@@ -91,15 +86,12 @@ base_url += ("&vibe=" + vibe.val());
 base_url += ("&apparel=" + apparel.val());
 base_url += ("&user_id=" + uid);
 window.open(base_url);
+ alert(uid);
 }
 else {
   console.log("UID WAS NULL");
   console.log(uid);
+
   alert("FAILURE- must log in");
 }
-}
-
-});
-
-
-});
+} */
