@@ -42,14 +42,7 @@ getCookies("https://www.aveece.com", "aveece_user_id", function(uid) {
   var apparel = $("#apparel");
   console.log(uid);
   alert(uid);
-  });
 
-});
-
-
-});
-
-/*
     function validate() {
    if( title.val() == "" )
    {
@@ -94,4 +87,11 @@ else {
 
   alert("FAILURE- must log in");
 }
-} */
+} 
+
+  });
+
+});
+
+
+});
