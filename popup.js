@@ -90,18 +90,54 @@ chrome.tabs.getSelected(null, function(tab) {
 
 
 //    var base_url = "localhost:3000/items/new?"
-  var base_url = "http://aveece.com/items/new?";
+  var base_url = "https://aveece.com/items/new?";
   base_url += ("title=" + title.val());
   base_url += ("&url=" + url.val());
   base_url += ("&price=" + price.val());
   base_url += ("&gender=" + gender.val());
   base_url += ("&vibe=" + vibe.val());
   base_url += ("&apparel=" + apparel.val());
-  base_url += "&user_id=" + "99"
+  base_url += ("&user_id=" + "99");
 
- $.get(base_url, function(data) {
-   humane.log('Item added.');
+
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", base_url, true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+    // JSON.parse does not evaluate the attacker's scripts.
+  //  var resp = JSON.parse(xhr.responseText);
+  }
+}
+xhr.send();
+
+
+//  window.open(base_url);
+/*
+$.ajax({
+     url:base_url,
+     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+     success:function(json){
+         // do stuff with json (in this case an array)
+         console.log("success");
+         alert("Success");
+     },
+     error:function(){
+         alert("Error");
+         console.log("failure");
+     },
 });
+*/
+
+alert("hello");
+
+/*
+$.get(base_url, function(data){
+  console.log(data);
+  alert(data);
+  console.log("After wards");
+});
+*/
 
     }
   });
