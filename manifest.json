@@ -10,13 +10,13 @@
   "version": "1.0",
 
   "permissions": [
-    "http://*/*","https://*/*", "tabs", "https://aveece.com/items/new?/*","cookies"
+    "http://*/*","https://*/*", "tabs", "https://aveece.com/items/new*","cookies"
   ],
   "homepage_url" : "https://aveece.com/items/",
   "content_scripts": [
    {
-       "matches": ["http://*/*","https://*/*","https://aveece.com/items/new?/*"],
-       "js": ["jquery.js", "popup.js","cookies.js"]
+       "matches": ["http://*/*","https://*/*","https://aveece.com/items/news*"],
+       "js": ["jquery.js", "popup.js","humane.js"]
    }
   ],
   "browser_action": {
