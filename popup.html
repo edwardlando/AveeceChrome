@@ -14,12 +14,24 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
     /***********************************************************************************************************/
     /***********************************************************************************************************/
 	
+	@font-face {
+    font-family: 'futuram-webfont';
+    src: url('futuram-webfont.eot');
+    src: url('futuram-webfont.eot?#iefix'),
+         url('futuram-webfont.woff'),
+         url('futuram-webfont.ttf'),
+         url('futuram-webfont.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+
 	#container {
 		width: 300px;
 		padding: 20px;
 	}
 
     #container h1 {
+    	font-family: 'futuram-webfont';
     	font-size: 14px;
      }
      #container h2 {
@@ -29,6 +41,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
      #gender label, #vibe label, #apparel label {
      	margin-bottom: 0px;
      }
+
+
 
 
 
@@ -47,7 +61,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
   <body>
 
         <div id="container">
-      <h1>Add an item to Aveece</h1>
+      <h1>ADD AN ITEM TO AVEECE</h1>
           
           <!-- Form inputs -->
       <form name="input">
