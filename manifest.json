@@ -1,8 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "One-click Aveece",
+  "name": "Add to Aveece",
   "description": "This extension demonstrates a browser action with kittens.",
+  "icons": { 
+    "16": "av.png",
+    "128": "av.png"
+  },
   "version": "1.0",
 
   "permissions": [
