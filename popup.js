@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+
+chrome.tabs.getSelected(null, function(tab) {
+    $("#url").val(tab.url);
+});
+
+
   /* Form inputs */
   var title = $("#title");
   var url = $("#url");
@@ -7,6 +13,7 @@ $(document).ready(function() {
   var gender = $("#gender");
   var vibe = $("#vibe");
   var apparel = $("#apparel");
+
 
   /*
         Title:   <input type="text" name="title" id="title">
@@ -64,9 +71,25 @@ $(document).ready(function() {
 }  
 
   $('#form_submit').click(function() {
+
+
+
+
+
+  /* Form inputs */
+  var title = $("#title");
+  var url = $("#url");
+  var price = $("#price");
+  var gender = $("#gender");
+  var vibe = $("#vibe");
+  var apparel = $("#apparel");
+
+
     if (validate()){
 
 
+
+//    var base_url = "localhost:3000/items/new?"
   var base_url = "http://aveece.com/items/new?";
   base_url += ("title=" + title.val());
   base_url += ("&url=" + url.val());
@@ -76,36 +99,10 @@ $(document).ready(function() {
   base_url += ("&apparel=" + apparel.val());
   base_url += "&user_id=" + "99"
 
-  var newWindow = window.open(base_url); 
- // newWindow.close();
-  setTimeout(function(){newWindow.close()},500);
+ $.get(base_url, function(data) {
+   humane.log('Item added.');
+});
 
-/*
-    var values = {
-        "title" : $("#title").val(),
-        "url" : $("#url").val(),
-        "price" : parseFloat($("#price").val()),
-        "gender" : $("#gender").val(),
-        "vibe" : $("#vibe").val(),
-        "apparel" : $("#apparel").val()
-      };
-      console.log(values);
-
-       $.ajax({
-        url: "https://aveece.com/items.json",
-        type: "POST",
-        data: values,
-        dataType: "json",
-        success: function(data){
-            alert("success");
-            alert("data title was " + data['title']);
-             $("#result").html('submitted successfully');
-        },
-        error:function (xhr, ajaxOptions, thrownError) {
-          console.log(xhr.status);
-          console.log(thrownError);
-        }
-      }); */ 
     }
   });
 
