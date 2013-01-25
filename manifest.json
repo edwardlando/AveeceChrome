@@ -16,7 +16,7 @@
    }
   ],
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "av.png",
     "default_popup": "popup.html"
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval' ; object-src 'self' 'unsafe-eval'"
