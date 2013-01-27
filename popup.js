@@ -48,7 +48,7 @@ $(document).ready(function() {
           var vibe = $("#vibe").val();
           var apparel = $("#apparel").val();
 
-          if (validate()){
+          if (validate() && uid != null){
               var base_url = "https://www.aveece.com/items/new?";
               base_url += ("title=" + title);
               base_url += ("&url=" + url);
