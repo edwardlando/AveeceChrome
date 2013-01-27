@@ -12,18 +12,14 @@ function getCookies(domain, name, callback) {
 function validate() {
  if( $("#title").val() == "" )
  {
-   alert( "Please provide a title!" );
    return false;
  }
  if( $("#url").val() == "" )
  {
-   alert( "Please provide a url!" );
    return false;
  }
- if( $("#price").val() == "" ||
-   isNaN( parseFloat(price.val()) ))
+ if( $("#price").val() == "" )
  {
-   alert( "Please provide a price." );
    return false;
  }
  return( true );
