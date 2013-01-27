@@ -61,6 +61,9 @@ $(document).ready(function() {
             window.open(base_url);
 
             } 
+          else {
+            
+          }
         });
       
     });
