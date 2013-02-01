@@ -34,18 +34,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
     	font-family: 'futuram-webfont';
     	font-size: 14px;
      }
-     #container h2 {
-     	font-size: 12px;
-     }
+	#container h2 {
+	 	font-size: 12px;
+	}
 
-     #gender label, #vibe label, #apparel label {
+    #gender label, #vibe label, #apparel label {
      	margin-bottom: 0px;
-     }
+    }
 
-
-
-
-
+    #must_login {
+    	color: #0044cc;
+    	font-weight: bold;
+    	font-size: 12px;
+    	display: none;
+    }
 
     </style>
 
@@ -62,6 +64,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
 
         <div id="container">
       <h1>ADD AN ITEM TO AVEECE</h1>
+
+      <p id="must_login">Please go to Aveece.com and login</p>
           
           <!-- Form inputs -->
       <form name="input">
@@ -73,10 +77,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
           <option value="Female">Female</option>
         </select><br />
         <strong>Vibe</strong> <br/> <select id="vibe">
-          <option value="Elegant">Elegant</option>
-          <option value="Casual">Casual</option>
-          <option value="Preppy">Preppy</option>
-          <option value="Flashy">Flashy</option>
+          <option value="Gatsby Classic">Gatsby Classic</option>
+          <option value="Sunday Brunch">Sunday Brunch</option>
+          <option value="Boston Ivy">Boston Ivy</option>
+          <option value="Sunset Riviera">Sunset Riviera</option>
         </select><br />
         <strong>Apparel</strong> <br/> <select id="apparel">
           <option value="Tops">Tops</option>

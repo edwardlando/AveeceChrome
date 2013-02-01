@@ -23,19 +23,26 @@ function validate() {
    return false;
  }
  return( true );
-}  
+} 
+
+function checkPresenceOfCookie() {
+  $("#must_login").show(400);
+} 
+
 
 
         
 
 $(document).ready(function() {
 
+
     chrome.tabs.getSelected(null, function(tab) {
-    $("#url").val(tab.url);
-  });
+      $("#url").val(tab.url);
+    });
+
+
 
     getCookies("https://www.aveece.com", "aveece_user_id", function(uid) {
-
 
       $('#form_submit').click(function() {
 
@@ -62,7 +69,7 @@ $(document).ready(function() {
 
             } 
           else {
-            
+  
           }
         });
       
